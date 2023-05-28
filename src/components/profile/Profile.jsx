@@ -1,29 +1,38 @@
-import { WrapperCard } from './Profile.styled';
+import {
+  WrapperCard,
+  UserCard,
+  UserAvatar,
+  UserName,
+  UserTag,
+  UserLocation,
+  UserStats,
+  StatsItem,
+  StatsInnerItem,
+} from './Profile.styled';
 
 export const Profile = user => {
   return (
     <WrapperCard>
-      <div className="description">
-        <img src={user.avatar} alt={user.name} className="avatar" />
-        <p className="name">{user.name}</p>
-        <p className="tag">{user.tag}</p>
-        <p className="location">{user.location}</p>
-      </div>
-
-      <ul className="stats">
-        <li className="stats-item">
-          <span className="label">Followers</span>
-          <span className="quantity">{user.stats.followers}</span>
-        </li>
-        <li className="stats-item">
-          <span className="label">Views</span>
-          <span className="quantity">{user.stats.views}</span>
-        </li>
-        <li className="stats-item">
-          <span className="label">Likes</span>
-          <span className="quantity">{user.stats.likes}</span>
-        </li>
-      </ul>
+      <UserCard>
+        <UserAvatar src={user.avatar} alt={user.name} />
+        <UserName>{user.name}</UserName>
+        <UserTag>{user.tag}</UserTag>
+        <UserLocation>{user.location}</UserLocation>
+      </UserCard>
+      <UserStats>
+        <StatsItem>
+          <StatsInnerItem>Followers</StatsInnerItem>
+          <StatsInnerItem>{user.stats.followers}</StatsInnerItem>
+        </StatsItem>
+        <StatsItem>
+          <StatsInnerItem>Views</StatsInnerItem>
+          <StatsInnerItem>{user.stats.views}</StatsInnerItem>
+        </StatsItem>
+        <StatsItem>
+          <StatsInnerItem>Likes</StatsInnerItem>
+          <StatsInnerItem>{user.stats.likes}</StatsInnerItem>
+        </StatsItem>
+      </UserStats>
     </WrapperCard>
   );
 };
