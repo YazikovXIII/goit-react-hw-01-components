@@ -1,8 +1,8 @@
-import { ProfileCard } from './Profile.styled';
+import { WrapperCard } from './Profile.styled';
 
 export const Profile = user => {
   return (
-    <ProfileCard>
+    <WrapperCard>
       <div className="description">
         <img src={user.avatar} alt={user.name} className="avatar" />
         <p className="name">{user.name}</p>
@@ -24,6 +24,6 @@ export const Profile = user => {
           <span className="quantity">{user.stats.likes}</span>
         </li>
       </ul>
-    </ProfileCard>
+    </WrapperCard>
   );
 };

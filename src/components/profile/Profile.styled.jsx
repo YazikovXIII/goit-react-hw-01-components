@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProfileCard = styled.div`
+export const WrapperCard = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -60,7 +60,7 @@ export const ProfileCard = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid white;
   }
 
   .stats-item:first-child {
