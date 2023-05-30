@@ -8,7 +8,16 @@ export const Friends = ({ data }) => {
   return (
     <WrapperCard>
       <FriendsList>
-        <FriendsListItemComp data={data} />
+        {data.map(({ id, name, avatar, isOnline }) => {
+          return (
+            <FriendsListItemComp
+              key={id}
+              name={name}
+              avatar={avatar}
+              isOnline={isOnline}
+            />
+          );
+        })}
       </FriendsList>
     </WrapperCard>
   );
